@@ -1,0 +1,1 @@
+In this project we will implement the redux architecture in a single js file
