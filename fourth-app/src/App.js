@@ -7,7 +7,7 @@ class App extends React.Component{
   render(){
     return(
         <div>
-            <p>Age: <span style={{color:'red'}}></span></p>
+            <p>Age: <span style={{color:'red'}}>{this.props.age}</span></p>
             <br></br>
             <br></br>
             <button onClick={this.props.ageUp}>UP</button>
