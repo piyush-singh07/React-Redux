@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React , {Component} from 'react';
+import {connect} from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component{
+  render(){
+    return(
+      <div>
+        <p>Bal : <span style={{color:"green"}}> {this.props.bal} </span></p>
+        <br></br>
+        <br></br>
+        <button onClick={this.props.deposit}>DEPOSIT</button>
+        <button onClick={this.props.withdraw}>WITHDRAW</button>
+      </div>
+    )
+  }
+};
 
-export default App;
+const receive=(state)=>{
+  return {
+    bal:state.bal
+  }
+};
+
+const send =(dispatch)=>{
+  return{
+    deposit:()=>{
+      dispatch({type:'DEPOSIT',value:1000})
+    },
+    withdraw:()=>{
+      dispatch({type:'WITHDRAW',value:100})
+    }
+  }
+};
+
+export default connect(receive,send)(App);
+
+
+
+
+
