@@ -6,6 +6,6 @@ elements :
 2. Reducer
 3. State
 4. Dispatch
-5. Component
+5. Component (basic App Component)
 6. Subscribe
-7. Action
+7. Actions
